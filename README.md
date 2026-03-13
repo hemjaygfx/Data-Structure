@@ -22,6 +22,7 @@ The solution uses a **Nested Loop** approach (a loop inside a loop) to compare t
 ---
 
 🚀 Key Features
+
 Array Manipulation: Demonstrates how to traverse and compare arrays.
 
 Nested Loops: Efficiently handles cross-referencing between data sets.
@@ -36,6 +37,7 @@ ds.algo: The main algorithm file.
 
 README.md: Project documentation.
 
+---
 
 ### 📊 Step-by-Step Execution Trace
 Here is how the algorithm processes the sets: `Set 1: [3, 1, 7, 9]` and `Set 2: [2, 4, 1, 9, 3]`.
