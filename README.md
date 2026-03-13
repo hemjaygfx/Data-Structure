@@ -31,6 +31,7 @@ Flag Logic: Uses a Boolean found flag to track the existence of elements across 
 ---
 
 📂 Project Structure
+
 ds.algo: The main algorithm file.
 
 README.md: Project documentation.
