@@ -1,0 +1,51 @@
+ALGORITHM Sum_Distinct_Elements
+
+VAR
+    set1 : ARRAY_OF INTEGER[4] := [3, 1, 7, 9];
+    set2 : ARRAY_OF INTEGER[5] := [2, 4, 1, 9, 3];
+    sum : INTEGER := 0;
+    i, j : INTEGER;
+    found : BOOLEAN;
+
+BEGIN
+    // --- PART 1: Check elements of Set 1 in Set 2 ---
+    FOR i FROM 0 TO set1.length - 1 DO
+        found := FALSE; // Reset the found flag for each element of Set 1
+        
+        FOR j FROM 0 TO set2.length - 1 DO
+            IF (set1[i] = set2[j]) THEN
+                found := TRUE; // We found a match!
+                BREAK;         // No need to keep looking
+            END_IF
+        END_FOR
+        
+        // If we looked at EVERYTHING and didn't find a match...
+        IF (NOT found) THEN
+            sum := sum + set1[i];
+        END_IF
+    END_FOR
+
+    // --- PART 2: Check elements of Set 2 in Set 1 ---
+    FOR i FROM 0 TO set2.length - 1 DO
+        found := FALSE; // Reset the found flag for each element of Set 2
+        
+        FOR j FROM 0 TO set1.length - 1 DO
+            IF (set2[i] = set1[j]) THEN
+                found := TRUE; // We found a match!
+                BREAK;         // No need to keep looking
+            END_IF
+        END_FOR
+        
+        IF (NOT found) THEN
+            sum := sum + set2[i];
+        END_IF
+    END_FOR
+
+    Write("The sum of distinct elements is: ", sum);
+END
+
+// Example Usage:
+// Set 1: [3, 1, 7, 9]
+// Set 2: [2, 4, 1, 9, 3]
+// Distinct elements are: 7 (from Set 1) and 2, 4 (from Set 2)
+// So the output will be: The sum of distinct elements is: 13
